@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+	<link rel="stylesheet" type="text/css" href="css/animation.css">
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+	
+	
+</head>
+<body onload="switchC()">
+
+	<div class="row">
+		<div class="row-item">
+			<img id="image1" src="img/1.png" width="200px">
+		</div>
+		<div class="row-item">
+			<img id="image2" src="img/1.png" width="200px">
+		</div>
+		<div class="row-item">
+			<img id="image3" src="img/1.png" width="200px">
+		</div>		
+	</div>
+
+	<div class="row">
+		<div class="row-item">
+			<img id="image4" src="img/1.png" width="200px">
+		</div>
+		<div class="row-item">
+			<img id="image5" src="img/1.png" width="200px">
+		</div>
+		<div class="row-item">
+			<img id="image6" src="img/1.png" width="200px">
+		</div>		
+	</div>
+
+	<div class="row">
+		<div class="row-item">
+			<img id="image7" src="img/1.png" width="200px">
+		</div>
+		<div class="row-item">
+			<img id="image8" src="img/1.png" width="200px">
+		</div>
+		<div class="row-item">
+			<img id="image9" src="img/1.png" width="200px">
+		</div>		
+	</div>
+
+	<div class="row2" id="text">
+		<p >01 : 14 AM</p>
+	</div>
+
+	<div class="row3" >
+		<div class="row-item2">
+			<p id="text2">SPICY</p>
+		</div>
+		<div class="row-item2">
+			<p id="text3">SPICY</p>
+		</div>
+		<div class="row-item2">
+			<p id="text4">SPICY</p>
+		</div>
+	</div>
+	
+</body>
+
+<script type="text/javascript">
+	function switchC(){
+		var speechShow = localStorage.getItem('speech');
+		setInterval(function(){
+			responsiveVoice.speak(speechShow);
+		},2500);
+		
+
+		console.log(speechShow);
+
+		var minuteShow = localStorage.getItem('minute');
+		var hourShow = localStorage.getItem('hour');
+		var apmShow = localStorage.getItem('APM');
+
+		var shapeShow = localStorage.getItem('shape');
+
+		var r = localStorage.getItem('r');
+		var g = localStorage.getItem('g');
+		var b = localStorage.getItem('b');
+		var flavorShow = localStorage.getItem('flavor');
+		// console.log(r);
+		// console.log(g);
+		// console.log(b);
+		console.log(flavorShow);
+
+
+		//document.getElementById('image').src = "img/" + shapeShow + ".png";
+		document.getElementById('image1').src = "img/" + shapeShow + ".png";
+		document.getElementById('image2').src = "img/" + shapeShow + ".png";
+		document.getElementById('image3').src = "img/" + shapeShow + ".png";
+		document.getElementById('image4').src = "img/" + shapeShow + ".png";
+		document.getElementById('image5').src = "img/" + shapeShow + ".png";
+		document.getElementById('image6').src = "img/" + shapeShow + ".png";
+		document.getElementById('image7').src = "img/" + shapeShow + ".png";
+		document.getElementById('image8').src = "img/" + shapeShow + ".png";
+		document.getElementById('image9').src = "img/" + shapeShow + ".png";
+
+		document.getElementById('text').innerHTML =  hourShow+ " : " + minuteShow + " " + apmShow;
+		document.getElementById('text2').innerHTML = flavorShow;
+		document.getElementById('text3').innerHTML = flavorShow;
+		document.getElementById('text4').innerHTML = flavorShow;
+
+		//body.style.backgroundColor = "(r,g,b)";
+		document.body.style.backgroundColor = "rgb("+r+","+g+","+b+")";
+
+
+	}
+</script>
+</html>

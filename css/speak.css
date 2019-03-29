@@ -1,0 +1,22 @@
+body,html{
+	height: 100%;
+	background-color: black;
+	overflow: hidden;
+	font-family: 'Amatic SC', cursive;
+}
+
+#type{
+	border: 3px double #CCCCCC;
+	width: 400px;
+	height: 200px;
+	margin-left: 30%;
+
+
+}
+
+p{
+	color: white;
+	font-size: 52px;
+	padding-left: 18%;
+
+}

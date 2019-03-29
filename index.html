@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>YOU</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/addons/p5.dom.min.js" type="text/javascript"></script>
+	<script src="branch.js" type="text/javascript"></script>
+	<!-- <link rel="stylesheet" type="text/css" href="css/flavor.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+</head>
+
+<style type="text/css">
+	body,html{
+		height: 100%;
+		overflow: hidden;
+		margin: 0;
+	}
+</style>
+<body>
+	
+</body>
+
+<script type="text/javascript">
+	var a, b, c, a1, b1;
+	var startX;
+	var len;
+	var tree = [];
+	// var last = [];
+	var count = 0;
+	var newBegin, newEnd;
+
+
+	var dx, dy;
+	var sinVal;
+	var v1, v2;
+	var timecount, minute, minuteA, hour;
+
+	var choiceColor;
+	var counter = 0;
+
+	// var showClock = false;
+	// var clockPosX, clockPosY = 300;
+
+	// var g1;
+	// var w, h;
+	var r;
+	var d = [];
+	// var pop = [false,false,false,false,false,false];
+	var branchX, branchY;
+	var mode;
+	var w;
+	var popOr = false;
+
+	function setup(){
+		//pixelDensity(1);
+
+		createCanvas(windowWidth, windowHeight);
+		background(0);
+		startX = width * 0.13;
+		len = width * 0.065; 
+		branchX = [startX + 120, startX * 2 + 170,startX * 3 + 120,startX * 4 + 170,startX * 5 + 120,startX * 6 + 170];
+		branchY  = [height - len - 100, height - len *2, height - len *3 - 100, height - len *4, height - len * 5 - 100, height - len * 6];
+		// w = 200;
+		// h = height/4;
+		a = createVector(10, height);
+		b = createVector(10 + startX, height - len);
+		c = PI/2;
+
+
+		v1 = createVector(0, - height);
+		hour = 0;
+		
+		// g1 = createGraphics(w , h);
+		r = 50;
+	}
+
+	function draw(){
+		background(0);
+		push();
+		noStroke();
+		fill(255);
+		textFont("Amatic SC");
+		//textAlign(CENTER);
+		textSize(48);
+  		text("Welcome! Please press right arrow on keyboard to let the tree grow", 5, 50);
+  		text("and click on leaves to find yourself", 5, 100);
+  		pop();
+		// if(mode == 0 && show[0] == true){
+		// 	drawClock();	
+		// } else if(mode == 1 && show[1] == true){
+		// 	showFlavor();
+		// } else if (mode == 4 && show[4] == true){
+		// 	showSpeak();
+		// }
+		// if(popOr === false){
+		// 	popUp();
+			
+		// 	// if(w.closed === true){
+		// 	// 	popOr = !popOr;
+		// 	// }
+		// }
+	
+		
+
+		for(var i = 1; i < tree.length; i++){
+			tree[i].show();
+		}
+		
+
+	}
+
+	function mousePressed(){
+		console.log(mouseX + " , " + mouseY);
+		for (var i = 0; i < branchX.length; i++) {
+			
+			d[i] = dist(branchX[i], branchY[i], mouseX, mouseY);
+			if(d[i] < 70){
+				mode = i;
+				// show[i] = true;
+				//console.log(d[i]);
+				popUp();
+			}
+		}
+		
+	}
+
+
+	
+	function keyPressed(){
+		
+		if(keyCode === RIGHT_ARROW){
+
+	
+			count ++;
+			// popOr = false;
+			console.log(count);
+			// clockPosX = b.x;
+			// clockPosY = b.y - height / 2;
+			// showClock = true;
+				if(count % 2 == 0 && count <= 6){
+					c = c + PI/4;
+					tree[count] = new Branch(a, b, c);
+					tree[count].show();
+					
+				} else if(count % 2 != 0 && count <=6){
+					c = c - PI/4;
+					tree[count] = new Branch(a, b, c);
+					tree[count].show();
+					
+				// } else {
+				// 	a1 = createVector(a.x, a.y);
+				// 	b1 = createVector(b.x, b.y);
+				// 	last[0] = new Last(a1, b1);
+				// 	for (var i = last.length - 1; i >= 0; i--) {
+				// 		last[i].play();
+    //  					last.push(last[i].lastA());
+    //   					last.push(last[i].lastB());
+    				}
+    			a = newBegin;
+				b = newEnd;
+
+				}
+		}
+				
+			
+		
+		function popUp(){
+			if(mode == 0){
+				// drawClock();	
+				w = window.open('clock.html','','width=1000,height=600,top=10,left=10');
+				
+				// popOr = true;
+				//  if(w.closed){
+				// 	popOr = false;
+				// }				
+			} else if(mode == 1){
+				//showFlavor();
+				w = window.open('shape.html','','width=1000,height=600,top=10,left=10');
+				popOr = !popOr;
+			} else if (mode == 2){
+				//showSpeak();
+				w = window.open('color.html','','width=1000,height=600,top=10,left=10');
+				popOr = !popOr;
+			} else if (mode == 3){
+				w = window.open('flavor.html','','width=1000,height=600,top=10,left=10');
+				popOr = !popOr;
+			} else if (mode == 4){
+				w = window.open('speak.html','','width=1000,height=600,top=10,left=10');
+				popOr = !popOr;
+			} else if (mode == 5){
+				w = window.open('animation.html','','width=1000,height=600,top=10,left=10');
+				popOr = !popOr;
+			}
+			
+		}
+					
+
+			// for (var i = 0; i < tree.length; i++) {
+				// if (i % 2) {
+				// 	c = c + PI/6;
+				// 	a = r.newBegin;
+				// 	b = r.newEnd;
+					
+				// 	tree.push(tree[i].show());
+				// } else {
+				// 	c = c - PI/6;
+				// 	a = r.newBegin;
+				// 	b = r.newEnd;
+				// 	tree.push(tree[i].show());
+				// }
+				
+			// }
+		
+
+	//}
+
+	// function draw(){
+	// 	for (var i = 0; i < tree.length; i++) {
+ //    		last[i].play();
+    
+ //  		}
+	// }
+
+
+	// function drawClock(){
+		
+	// 	push();
+	// 	angleMode(DEGREES);
+	// 	translate(width /6,height * 0.6);
+	// 	noFill();
+	// 	stroke(255);
+	// 	//strokeWeight(5);
+
+	// 	//scale(2);
+	// 	ellipse(0,0, r *2 ,r * 2);
+
+	// 	sinVal = v1.heading();
+	// 	//console.log(sinVal);
+	// 	line(0,0,r * cos(sinVal),r * sin(sinVal));
+		
+	// 	fill(255);
+		
+	// 	ellipse(0,0,5,5);
+	// 	rectMode(CENTER);
+	// 	rect(r * cos(sinVal),r * sin(sinVal), 10,10);
+	// 	pop();
+		
+		
+	// 	timecount = sinVal;
+	// 	//console.log(timecount);
+	// 	if(timecount >= -180 && timecount <-90){
+	// 		timecount = timecount + 450;
+	// 	} else {
+	// 		timecount = timecount + 90;
+	// 	}
+	// 	minute = floor(timecount * 4);
+	// 	hour = floor(minute/60);
+	// 	minuteA = minute - hour * 60;
+
+	// 	pmAm = " AM";
+
+	// 	if(hour > 11){
+	// 		pmAm = " PM";
+	// 		hour -= 12;
+	// 	}
+
+	// 	minuteA = ("00" + minuteA).slice(-2);
+	// 	hour = ("00" + hour).slice(-2);
+	// 	push();
+	// 	textSize(18);
+	// 	noStroke();
+	// 	fill(255);
+	// 	textAlign(CENTER);
+	// 	textFont("Helvetica");
+	// 	text(hour + " : " + minuteA + pmAm, width/6, height * 0.6 + 80);
+	// 	pop();
+	// 	// imageMode(CENTER);
+	// 	// image(g1, width/2, height * 0.7);
+	// }
+
+	// function mouseDragged(){
+		
+	// 		dx = mouseX;
+	// 		dy = mouseY;
+	// 		v2 = createVector(dx - width/6, dy - height*0.6);
+	// 		v1 = v2.copy();
+	// 		cursor(HAND);	
+
+
+	// }
+
+	// function mouseReleased(){
+		
+	// 	cursor(ARROW);
+
+	// }
+
+	// function showFlavor(){
+	// 	document.getElementById('TEXT').style.display = "block";
+	// }
+
+	// function getText(textVal) {
+	// 	//choiceColor = textVal;
+	// 	console.log(choiceColor);
+	// 	counter += 1;
+	// 	if (counter == 1){
+	// 		document.getElementById(textVal).style.color = "pink";
+	// 		document.getElementById(textVal).style.fontSize = "100px";
+	// 		//alert("the flavor you have chosen is " + textVal);
+	// 		document.getElementById("further").style.display = "block";
+	// 	}
+
+	// }
+
+	// function showSpeak(){
+	// 	document.getElementById('con').style.display = "block";
+	// }
+	// function speak(){
+	// 	var text = document.getElementById('type').value;
+	// 	responsiveVoice.speak(text);
+	// }
+
+</script>
+</html>

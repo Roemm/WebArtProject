@@ -1,0 +1,235 @@
+body{
+	background-color: black;
+	overflow: hidden;
+	font-family: 'Amatic SC', cursive;
+	margin: 0;
+}
+
+#space{
+	height: 60px;
+}
+
+#further{
+	display: none;
+	color: red;
+	margin: 0;
+	position: relative;
+	left: 60%;
+}
+
+#dir{
+	margin: 0;
+	position: relative;
+	left: 10%;
+	font-size: 50px;
+	color: grey;
+}
+
+.TEXT{
+	background-color: black;
+	position: relative;
+	color: white;
+	font-family: 'Amatic SC', cursive;
+	width: 800px;
+	height: 400px;
+}
+
+#SWEET{
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	animation: sweetmove 5s infinite;
+}
+
+@keyframes sweetmove {
+	0%{
+		top: 0px;
+	}
+	25%{
+		top: 300px;
+	}
+	40%{
+		top: 200px;
+	}
+	60%{
+		top: 100px;
+	}
+	80%{
+		top: 50px;
+	}
+	100%{
+		top: 0px;
+	}
+}
+
+#BITTER{
+	position: absolute;
+	left: 16%;
+	top: 20%;
+	animation: bittermove 8s infinite;
+
+}
+
+@keyframes bittermove {
+	0%{
+		left: 0px;
+	}
+	10%{
+		left: 100px;
+	}
+	40%{
+		left: 250px;
+	}
+	50%{
+		left: 500px;
+	}
+	80%{
+		left: 200px;
+	}
+	100%{
+		left: 0px;
+	}
+}
+
+#SALTY{
+	position: absolute;
+	left: 35%;
+	top: 40%;
+	animation: saltymove 15s infinite;
+}
+
+@keyframes saltymove {
+	0%{
+		left: 0px;
+	}
+	15%{
+		left: 500px;
+	}
+	30%{
+		left: 200px;
+	}
+	40%{
+		left: 900px;
+	}
+	80%{
+		left: 400px;
+	}
+	90%{
+		left: 100px;
+	}
+	100%{
+		left: 0px;
+	}
+}
+
+#SOUR{
+	position: absolute;
+
+	left: 55%;
+	top: 60%;
+	animation: sourmove 9s infinite;
+}
+
+@keyframes sourmove {
+	0%{
+		top: 0px;
+	}
+	25%{
+		top: -100px;
+	}
+	50%{
+		top: 50px;
+	}
+	70%{
+		top: 150px;
+	}
+	75%{
+		top: 250px;
+	}
+	90%{
+		top: 200px;
+	}
+	95%{
+		top: 100px;
+	}
+	100%{
+		top:0px;
+	}
+}
+
+#SPICY{
+	position: absolute;
+	left: 70%;
+	top: 100%;
+	animation: spicymove 12s infinite;
+}
+
+@keyframes spicymove {
+	0%{
+		top: 0px;
+	}
+	25%{
+		top: -80px;
+	}
+	50%{
+		top: -65px;
+	}
+	65%{
+		top: -50px;
+	}
+	70%{
+		top: 0px;
+	}
+	80%{
+		top: 80px;
+	}
+	90%{
+		top: 300px;
+	}
+	95%{
+		top: 100px;
+	}
+	100%{
+		top: 0px;
+	}
+}
+
+#TANGY{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	animation: tangymove 5s infinite;
+
+}
+
+@keyframes tangymove {
+	0%{
+		left: 0px;
+	}
+	25%{
+		left: 100px;
+	}
+	50%{
+		left:50px;
+	}
+	60%{
+		left: 300px;
+	}
+	70%{
+		left: 500px;
+	}
+	80%{
+		left: 800px;
+	}
+	90%{
+		left: 200px;
+	}
+	100%{
+		left: 0px;
+	}
+}
+
+
+
+
+

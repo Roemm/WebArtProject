@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/flavor.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+    <style> body {padding: 0; margin: 0;} </style>
+    <!--<script src="../p5.min.js"></script>-->    
+    <!-- <script src="p5.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/addons/p5.dom.min.js" type="text/javascript"></script>
+    <!--  <script src="../addons/p5.dom.min.js"></script>
+    <script src="../addons/p5.sound.min.js"></script> -->
+    <script src="flavor.js"></script>
+  </head>
+
+  <body>
+    <div id="space" >
+      <p id="further">Now you can go on to your next choice...</p>
+    </div>
+    <p id="dir"> Choose  a  flavor  that  you  can  bear  with      for  most  of  the  time...</p>
+    <br>
+    <div class="TEXT">
+      <div id="SWEET" onclick="getText(this.children[0].innerHTML)">
+        <h1> SWEET</h1>
+      </div>
+      <div id="BITTER" onclick="getText(this.children[0].innerHTML)">
+        <h1>BITTER </h1>
+      </div>
+      <div id="TANGY" onclick="getText(this.children[0].innerHTML)">
+        <h1>TANGY</h1>
+      </div>
+      <div id="SPICY" onclick="getText(this.children[0].innerHTML)">
+        <h1>SPICY</h1>
+      </div>
+      <div id="SOUR" onclick="getText(this.children[0].innerHTML)">
+        <h1>SOUR</h1>
+      </div>
+      <div id="SALTY" onclick="getText(this.children[0].innerHTML)">
+        <h1>SALTY</h1>
+      </div>
+      
+    </div>
+  </body>
+  
+</html>

@@ -1,0 +1,17 @@
+body{
+      margin:0;
+      overflow: hidden;
+      font-family: 'Amatic SC', cursive;
+    }
+
+#title{
+	background-color: black;
+	margin: 0;
+	height: 120px;
+	text-align: center;
+}
+
+#dir{
+	margin: 0;
+	color: white;
+}
